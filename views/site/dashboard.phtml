@@ -1,0 +1,105 @@
+<?php require_once  VIEWS_PATH . 'includes/header.phtml'?>
+<?php require_once  VIEWS_PATH . 'includes/nav.phtml'?>
+<?php require_once  VIEWS_PATH . 'includes/menu_user.phtml'?>
+
+ <div class="container-fluid">
+      <div class="row">
+  
+        <!-- Menu Lado Esquerdo (Conteudo) -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Solicitação
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Produtos
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Clientes
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Relatórios
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrações
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+
+
+<!-- Dashboard/Conteúdo Lado Direito -->
+
+     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Compartilhar</button>
+                <button class="btn btn-sm btn-outline-secondary">Exportar</button>
+              </div>
+                
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                Semana
+              </button>
+            </div>
+          </div>
+
+         <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+            
+         <h2>O.S</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Nº O.S</th>
+                  <th>Categoria ID</th>
+                  <th>Nome</th>
+                  <th>Preço</th>
+                  <th>Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                 
+                <?php foreach($this->os as $os):?>
+                  
+                <tr>
+                  <td><?=$os['id'];?></td>
+                  <td><?=$os['category_id'];?></td>
+                  <td><?=$os['name'];?></td>
+                  <td><?= number_format($os['price'],2,',','.');?></td>
+                  <td><?=$os['description'];?></td>
+                </tr>
+                
+                <?php endforeach;?>
+                
+              </tbody>
+            </table>
+          </div>
+        </main>
+
+<?php require_once  VIEWS_PATH . 'includes/footer.phtml'?>       
