@@ -24,12 +24,18 @@ E com acesso a banco de dados Mysql.
  |
  ---Db/ - Contem as classes de conexão e gerenciamento do banco de dados.
  | 
----controller/ - Contem os controllers do sistema.
+ ---controller/ - Contem os controllers do sistema.
  |
----entidades/ - Contem a entidade do negócio.
+ ---entidades/ - Contem a entidade do negócio.
  |
----view/ - Contem a classe do Objeto View.
-   
+ ---view/ - Contem a classe do Objeto View.
+ 
+--- vendor/ - Arquivos Autoload feito com composer.
+
+--- views/ - Includes e paginas '.phtml' para acesso do controller.
+
+-composer.json - Arquivo composer.
+-config.php - Arquivo com as constantes do sistema.
 
 
 #Banco de Dados:
